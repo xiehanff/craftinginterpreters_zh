@@ -1,10 +1,14 @@
 # craftinginterpreters_zh
 
-[ [在线阅读](https://readonly.link/books/https://raw.githubusercontent.com/GuoYaxiang/craftinginterpreters_zh/main/book.json) ]
-
 手撸解释器教程《Crafting Interpreters》中文翻译。
 
+**在线阅读：<https://xiehanff.github.io/craftinginterpreters_zh/>**
+
+早期基于 GitBook 的在线阅读入口仍然可用：[readonly.link](https://readonly.link/books/https://raw.githubusercontent.com/xiehanff/craftinginterpreters_zh/main/book.json)。
+
 这是一个已基本完成的翻译项目，原项目是[craftinginterpreters](https://github.com/munificent/craftinginterpreters)，同时还有配套的英文书，可免费[在线阅读](http://www.craftinginterpreters.com/)。
+
+译本由[郭娅祥](https://github.com/GuoYaxiang/craftinginterpreters_zh)（@GuoYaxiang）完成；本仓库是其 fork，改动只有：新增 VitePress 静态站点（`index.md` + `.vitepress/`）、GitHub Pages 自动部署，以及对应的 README 说明。译文正文未做修改。
 
 该书由一门小型的自创语言Lox开始，分别使用Java和C实现了两种类型的解释器，jlox和clox，其中前者是将语法解析成Java中的表示代码，主要依赖Java本身的语法能力实现代码的真正运行；后者则采用了类似编译和虚拟机的机制，实现了一个看上去“更高效”的解释器。
 
@@ -19,6 +23,8 @@
 <img src="http://img.codinghonest.space/donate/alipay.png" alt="支付宝" width="300" height="300" />                    <img src="http://img.codinghonest.space/donate/wechat.png" alt="微信支付" width="300" height="300" />
 
 ### 进度
+
+（章节链接在 GitHub 上可直接点开；在线阅读版见页首地址。）
 
 | 章节序号 | 章节名                                                       | 内容简介     | 完成情况 |
 | -------- | ------------------------------------------------------------ | ------------ | -------- |
@@ -65,7 +71,34 @@ PS：
 
 文本中使用了很多Typora功能语法，建议使用[Typora](https://typora.io/)阅读，
 
-
-
 ### 特别鸣谢
 感谢[xieyuheng](https://github.com/xieyuheng)提供的在线阅读支持，为需要在线阅读markdown文档的同学推荐[read-only项目](https://github.com/readonlylink/readonlylink)，样式简约大方，值得一试。
+
+## 本站点
+
+在线阅读站由 VitePress 根据 `content/` 下的 Markdown 直接生成，译文与仓库内容完全一致，不额外维护第二份文本。
+
+```bash
+npm install     # 首次安装依赖
+npm run dev     # 本地预览，默认 http://localhost:5173
+npm run build   # 生成静态站点到 dist/
+npm run preview # 预览构建产物
+```
+
+推送到 `main` 分支后，`.github/workflows/deploy.yml` 会自动构建并发布到 GitHub Pages。若日后绑定自定义域名，记得同步修改 `.vitepress/config.mts` 中的 `base`。
+
+站点对正文做了两处渲染层兜底（不改动译文文件）：
+
+- `*<u>说明</u>*` 这类交叉嵌套的内联标签，在解析前改写成合法嵌套，否则 Vue 模板编译会报错；
+- 脚注中的大写 `<BR>` 统一转成 `<br>`，避免被当成未闭合标签。
+
+## 目录结构
+
+```text
+book.json          # 书目信息与章节顺序，站点侧边栏由此生成
+content/           # 各章译文 Markdown 与配图
+README/            # README 用到的图片
+index.md           # 站点首页
+.vitepress/        # VitePress 配置（侧边栏、搜索、导航）
+.github/workflows/ # GitHub Pages 自动部署
+```

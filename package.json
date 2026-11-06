@@ -1,0 +1,16 @@
+{
+  "name": "craftinginterpreters-zh-site",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "《Crafting Interpreters》中文译本的静态站点",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "markdown-it-footnote": "^4.0.0",
+    "vitepress": "^1.6.4"
+  }
+}
