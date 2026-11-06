@@ -8,19 +8,13 @@
 
 这是一个已基本完成的翻译项目，原项目是[craftinginterpreters](https://github.com/munificent/craftinginterpreters)，同时还有配套的英文书，可免费[在线阅读](http://www.craftinginterpreters.com/)。
 
-译本由[郭娅祥](https://github.com/GuoYaxiang/craftinginterpreters_zh)（@GuoYaxiang）完成；本仓库是其 fork，改动只有：新增 VitePress 静态站点（`index.md` + `.vitepress/`）、GitHub Pages 自动部署，以及对应的 README 说明。译文正文未做修改。
-
 该书由一门小型的自创语言Lox开始，分别使用Java和C实现了两种类型的解释器，jlox和clox，其中前者是将语法解析成Java中的表示代码，主要依赖Java本身的语法能力实现代码的真正运行；后者则采用了类似编译和虚拟机的机制，实现了一个看上去“更高效”的解释器。
 
 该书中并不是只灌输概念或者只贴出代码，相反，作者经过悉心拆解解释器相关的概念，在每一章节中逐步进行讲解和实现，并且保证每个章节结束之后都有一个可以运行的解释器版本。内容上不会有太过深入的理论，对于普通编程爱好者也可以很容易地上手学习。
 
-如果您的英语阅读能力比较强，建议直接阅读原文，同时也欢迎您参与本项目，分享自己学习的成果，帮助更多的人。
+如果您的英语阅读能力比较强，建议直接阅读原文。
 
-囿于本人能力限制，在译文难免有错漏或者含混之处，请积极留言，我会悉心听取大家的意见，争取可以让这篇译文帮助到更多人。
-
-如果您觉得这篇译文对您的学习有所帮助，可以奖励作者一杯奶茶:)
-
-<img src="http://img.codinghonest.space/donate/alipay.png" alt="支付宝" width="300" height="300" />                    <img src="http://img.codinghonest.space/donate/wechat.png" alt="微信支付" width="300" height="300" />
+欢迎参与本项目：译文勘误、术语统一、排版修正都可以直接提 issue 或 PR。
 
 ### 进度
 
